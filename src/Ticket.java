@@ -35,13 +35,13 @@ public class Ticket {
 
     //Check the status of flight
     public String checkFlightStatus(Flight flight){
-
+        return "";
     }
 
 
     // Check the duration of flight
     public String checkFlightDuration(Flight flight){
-
+        return "";
     }
 
 
