@@ -1,20 +1,21 @@
 public class Ticket {
 
 
-    // Attributes of Ticket class
-    int pnrNumber;
-    String departureLocation;
-    String destinationLocation;
-    String departureDate;
-    String departureTime;
-    int seatNumber;
-    float ticketPrice;
-    boolean isCancelled = false;
-    Passenger passengerDetails;
-    Flight flightDetails;
+    // TODO: Add attributes
+    int pnrNumber; // A unique identification number for each ticket booked by passenger
+    String departureLocation; // Location from where the passenger is boarding
+    String destinationLocation; // Location where the passenger is travelling
+    String departureDate; // Date for which the flight is booked
+    String departureTime; // Time when the flight leaves from departure location
+    int seatNumber; // Seat number of the passenger
+    float ticketPrice; // Amount paid by the passenger
+    boolean isCancelled = false; // Weather the passenger has cancelled ticket or not
+    Passenger passengerDetails; // contact and address details of passenger
+    Flight flightDetails; // Flight details of the passenger
 
 
-    // Constructor for Ticket class
+    // TODO: Create a constructor
+
 
     public Ticket(int pnrNumber, String departureLocation, String destinationLocation, String departureDate, String departureTime, int seatNumber, float ticketPrice, boolean isCancelled, Passenger passengerDetails, Flight flightDetails) {
         this.pnrNumber = pnrNumber;
@@ -30,7 +31,7 @@ public class Ticket {
     }
 
 
-    // Methods for Ticket class
+    // TODO: Create methods
 
 
     //Check the status of flight

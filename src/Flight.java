@@ -1,15 +1,17 @@
 public class Flight {
 
 
-    // Attributes of Flight class
-    String flightNumber;
-    String airlineName;
-    int flightCapacity;
-    int numberOfSeatsBooked;
-    boolean isAvailable;
+    // TODO : Add attributes
 
 
-    // Constructor of FlightClass
+    String flightNumber; // A unique flight number given to each flight starting with two letters and three numbers
+    String airlineName; // Name of the airlines
+    int flightCapacity; // The seat capacity of the flight
+    int numberOfSeatsBooked; // The number of seats booked by the passenger
+    boolean isAvailable; // Check weather the flight is available or not
+
+
+    // TODO : Create a constructor
 
 
     public Flight(String flightNumber, String airlineName, int flightCapacity, int numberOfSeatsBooked, boolean isAvailable) {
@@ -21,7 +23,7 @@ public class Flight {
     }
 
 
-    // Methods of Flight class
+    // TODO : Create methods
 
 
     // Get the details of the flight booked

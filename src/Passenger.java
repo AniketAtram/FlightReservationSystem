@@ -1,7 +1,7 @@
 public class Passenger {
 
 
-    // Attributes of Passenger class
+    // TODO : Add attributes
 
 
     String contactName; // Name of the passenger
@@ -12,7 +12,7 @@ public class Passenger {
     String addressStreet; // Street and other location/landmark details of address
 
 
-    // Constructor for Passenger Class
+    // TODO : Create a constructor
 
 
     public Passenger(String contactName, String contactPhoneNumber, String contactEmail, String addressCity, String addressState, String addressStreet) {
@@ -25,7 +25,7 @@ public class Passenger {
     }
 
 
-    // Methods for the Passenger class
+    // TODO : Create methods
 
 
     // Method that fetches the contact details of the passenger
