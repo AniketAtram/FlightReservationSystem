@@ -3,7 +3,8 @@ public class Passenger {
 
     // TODO : Attributes of Passenger class
 
-
+    private static int idCounter = 0; // a counter attribute to keep track of instances created
+    private int id; // This attribute will be used to assign a unique id to each passenger
     private Contact contact; // attribute of type Contact
     private Address address; // attribute of type Address
 
@@ -11,6 +12,7 @@ public class Passenger {
 
     // TODO : Constructor of Passenger class
     /** Takes six parameters and creates instances of Contact and Address by passing the values to it
+     *  and keeps track of instances created with the help of idCounter
      * @param name : The name of the passenger
      * @param number : The contact number of the passenger
      * @param email : The email address provided by the passenger
@@ -20,8 +22,10 @@ public class Passenger {
      **/
 
     public Passenger(String name, String number, String email, String city, String state, String street) {
+        this.id = idCounter; // Assign the idCounter value to the Passenger instance attribute id
         this.contact = new Contact(name, number, email); // Composite relationship with Passenger class and Contact
         this.address = new Address(street, city, state); // Composite relationship with Passenger class and Address
+        idCounter+=1; // Increment the idCounter by one
     }
 
 
@@ -107,6 +111,15 @@ public class Passenger {
     public void updateAddressDetails(String street, String state, String city){
         address.updateAddressDetails(city, state, street);
     } // End of updateAddressDetails method
+
+
+    // TODO : Provide getters and setters
+
+    // Getter for the id for each passenger instance
+
+    public int getId() {
+        return id;
+    } // End of getId method
 
 
 }// End of passenger class
