@@ -3,7 +3,7 @@ public class Passenger {
 
     // TODO : Attributes of Passenger class
 
-    private static int idCounter = 0; // a counter attribute to keep track of instances created
+    private static int idCounter = 1; // a counter attribute to keep track of instances created
     private int id; // This attribute will be used to assign a unique id to each passenger
     private Contact contact; // Attribute of type Contact
     private Address address; // Attribute of type Address
@@ -67,7 +67,7 @@ public class Passenger {
 
 
         // Constructor of address class
-        public Address(String addressCity, String addressState, String addressStreet) {
+        public Address(String addressStreet, String addressCity, String addressState) {
             this.addressCity = addressCity;
             this.addressState = addressState;
             this.addressStreet = addressStreet;
@@ -75,7 +75,7 @@ public class Passenger {
 
 
         // Update address details
-        public void updateAddressDetails(String city, String state, String street){
+        public void updateAddressDetails(String street, String city, String state){
             this.addressCity = city;
             this.addressState = state;
             this.addressStreet = street;
@@ -96,7 +96,7 @@ public class Passenger {
 
 
     public void fetchAddressDetails(){
-        System.out.println("Street: "+address.addressStreet+"\nCity: "+address.addressCity+"\nState: "+address.addressState);
+        System.out.println("Address Details: \n"+address.addressStreet+"\n"+address.addressCity+"\n"+address.addressState);
     } // End of fetchAddressDetails
 
 

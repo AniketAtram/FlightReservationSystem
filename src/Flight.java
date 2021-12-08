@@ -6,21 +6,19 @@ public class Flight {
 
     private String flightNumber; // A unique flight number given to each flight starting with two letters and three numbers
     private String airlineName; // Name of the airlines
-    private int flightCapacity; // The seat capacity of the flight
-    private int numberOfSeatsBooked; // The number of seats booked by the passenger
+    private int flightCapacity = 200; // The seat capacity of the flight initialized to 200
+    private int numberOfSeatsBooked =0; // The number of seats booked
     private boolean isAvailable; // Check weather the flight is available or not
+    private Passenger passenger;
 
 
 
     // TODO : Create a constructor
 
-
-    public Flight(String flightNumber, String airlineName, int flightCapacity, int numberOfSeatsBooked, boolean isAvailable) {
+    public Flight(String flightNumber, String airlineName, Passenger passenger) {
         this.flightNumber = flightNumber;
         this.airlineName = airlineName;
-        this.flightCapacity = flightCapacity;
-        this.numberOfSeatsBooked = numberOfSeatsBooked;
-        this.isAvailable = isAvailable;
+        this.passenger = passenger;
     }
 
 
@@ -35,12 +33,21 @@ public class Flight {
 
     // Check if the flight is available
     public String  checkFlightAvailability(){
-        return (this.isAvailable)?"Available":"Not Available";
+        return (this.numberOfSeatsBooked<flightCapacity)?"Available":"Not Available";
+    }
+
+    // book a seat
+    public void bookSeat(){
+        this.flightCapacity -=1;
+        this.numberOfSeatsBooked += 1;
+        System.out.println("Flight booked successfully!");
     }
 
 
-    // Update number of seats
-    public void setNumberOfSeatsBooked(int updatedSeats){
-        this.numberOfSeatsBooked = updatedSeats;
+    // getter setter
+    public boolean isAvailable() {
+        return isAvailable;
     }
+
+
 }
