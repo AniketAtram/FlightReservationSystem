@@ -10,8 +10,8 @@ public class Ticket {
     int seatNumber; // Seat number of the passenger
     float ticketPrice; // Amount paid by the passenger
     boolean isCancelled = false; // Weather the passenger has cancelled ticket or not
-    Passenger passengerDetails; // contact and address details of passenger
-    Flight flightDetails; // Flight details of the passenger
+    Passenger passengerDetails; // Aggregate relationship between Ticket and Passenger
+    Flight flightDetails; // Aggregate relationship between Flight and Passenger
 
 
     // TODO: Create a constructor
