@@ -5,9 +5,8 @@ public class Passenger {
 
     private static int idCounter = 0; // a counter attribute to keep track of instances created
     private int id; // This attribute will be used to assign a unique id to each passenger
-    private Contact contact; // attribute of type Contact
-    private Address address; // attribute of type Address
-
+    private Contact contact; // Attribute of type Contact
+    private Address address; // Attribute of type Address
 
 
     // TODO : Constructor of Passenger class
