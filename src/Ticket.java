@@ -119,4 +119,8 @@ public abstract class Ticket {
     public String getPnrNumber() {
         return pnrNumber;
     }
+
+    public String getBookingStatus() {
+        return bookingStatus;
+    }
 } // End of Ticket class
