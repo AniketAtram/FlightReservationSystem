@@ -49,19 +49,39 @@ public class Main {
         servicesByAniket.add("Lunch");
 
         RegularTicket regularTicket = new RegularTicket(aniket, jetAirways, departureLocation, departureDestination, departureDate,departureTime, destinationArrivalTime, seatNumber,ticketPrice,servicesByAniket);
+//        System.out.println();
+//        System.out.println("Services availed are:");
+//        regularTicket.getServicesAvailed();
+//        System.out.println();
+//        System.out.println(regularTicket.checkFlightDuration());
+//        System.out.println();
+//        regularTicket.bookTicket();
+//        System.out.println();
+//        System.out.println("::Booking Details::");
+//        System.out.println(jetAirways.getFlightDetails());
+//        System.out.println();
+//        System.out.println(regularTicket.getBookingStatus());
+//        System.out.println(regularTicket.getPnrNumber());
+
+
+        // Aniket is now booking tourist ticket
+
+        ArrayList<String> selectedLocations = new ArrayList<>();
+        // He selected these locations
+        selectedLocations.add("Vagatore");
+        selectedLocations.add("Anjuna Beach");
+        selectedLocations.add("Casino");
+        // This is his hotel address
+        String hotelAddr = "Somewhere in Goa.";
+
+        // Now he books TouristTicket
+        TouristTicket touristTicket = new TouristTicket(aniket, jetAirways, departureLocation, departureDestination, departureDate,departureTime, destinationArrivalTime, seatNumber,ticketPrice,hotelAddr,selectedLocations);
         System.out.println();
-        System.out.println("Services availed are:");
-        regularTicket.getServicesAvailed();
+        touristTicket.bookTicket();
         System.out.println();
-        System.out.println(regularTicket.checkFlightDuration());
-        System.out.println();
-        regularTicket.bookTicket();
-        System.out.println();
-        System.out.println("::Booking Details::");
         System.out.println(jetAirways.getFlightDetails());
-        System.out.println();
-        System.out.println(regularTicket.getBookingStatus());
-        System.out.println(regularTicket.getPnrNumber());
+
+
 
 
 

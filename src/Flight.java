@@ -1,10 +1,11 @@
 public class Flight {
 
     // TODO : Add attributes
-
+    private static int ticketCounter =1;
+    private static int seatsCounter = 200;
     private String flightNumber; // A unique flight number given to each flight starting with two letters and three numbers
     private String airlineName; // Name of the airlines
-    private int flightCapacity = 200; // The seat capacity of the flight initialized to 200 for the sake of simplicity
+    private int flightCapacity; // The seat capacity of the flight initialized to 200 for the sake of simplicity
     private boolean isAvailable = true; // Seats are always available unless seats booked equals total capacity
     private int numberOfSeatsBooked =0; // The number of seats booked
     private Passenger passenger; // The instance of passenger for whom the seat is booked
@@ -13,6 +14,8 @@ public class Flight {
     // TODO : Create a constructor
 
     public Flight(String flightNumber, String airlineName, Passenger passenger) {
+        this.flightCapacity = seatsCounter;
+        this.numberOfSeatsBooked = ticketCounter;
         this.flightNumber = flightNumber;
         this.airlineName = airlineName;
         this.passenger = passenger;
@@ -24,7 +27,7 @@ public class Flight {
     // Get the details of the flight booked
     public String getFlightDetails(){
 
-        return "Airline: "+airlineName+" Flight Number: "+flightNumber+" Number of seats booked: "+numberOfSeatsBooked;
+        return "Airline: "+this.airlineName+" Flight Number: "+this.flightNumber+" Number of seats booked: "+this.numberOfSeatsBooked;
 
     }// End of getFlightDetails method
 
@@ -48,8 +51,10 @@ public class Flight {
 
     // update the number of seats in flight
     public void updateSeats(){
-        this.numberOfSeatsBooked += 1;
-        this.flightCapacity -=1;
+
+        this.numberOfSeatsBooked +=1;
+        this.flightCapacity -= this.numberOfSeatsBooked;
+
     }
 
     // TODO: Add getters and setters
