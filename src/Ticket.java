@@ -3,7 +3,7 @@ import java.util.*;
 public abstract class Ticket {
 
     // TODO: Add attributes
-    private String pnrNumber; // A unique identification number for each ticket booked by passenger
+    private String pnrNumber; // PNR number will be set only if the passenger books a ticket else not
     private String departureLocation; // Location from where the passenger is boarding
     private String destinationLocation; // Location where the passenger is travelling
     private String departureDate; // Date for which the flight is booked
@@ -82,13 +82,17 @@ public abstract class Ticket {
 
 
     // Book a ticket
+    /**This method will assign a PNR number
+     * If the passenger does not book a ticket then PNR number will be null**/
     public void bookTicket(){
 
         if(this.flightDetails.isAvailable()){
             this.bookingStatus = "Confirmed"; // Set the booking status to book
             // Randomly assign a PNR to the passenger
+            // NOTE : SOMETIMES IT WILL ASSIGN SAME PNR TO PASSENGER DUE TO RANDOM NATURE
+            // This implementation is done because I don't know how to create a character or string sequence
             Random generator = new Random();
-            String[] myArray = new String[] {"ABY985543", "JQP976609", "HKI224495"};
+            String[] myArray = new String[] {"ABY985543", "JQP976609", "HKI224495", "PGT314556", "RTK063110", "CXZ429165"};
             int randomInt = generator.nextInt(myArray.length);
             String generatedPNR = myArray[randomInt];
             // Save the PNR number

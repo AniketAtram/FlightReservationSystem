@@ -18,10 +18,10 @@ public class Main {
 
         Passenger aniket = new Passenger(name,phoneNumber,emailAddress,
                 city,state,street);
-        System.out.println();
-        aniket.fetchContactDetails();
-        System.out.println();
-        aniket.fetchAddressDetails();
+//        System.out.println();
+//        aniket.fetchContactDetails();
+//        System.out.println();
+//        aniket.fetchAddressDetails();
 
 
         // Aniket is now checking and selecting flight
@@ -29,12 +29,12 @@ public class Main {
         String selectedFlightName = "Jet Airways";
 
         Flight jetAirways = new Flight(selectedFlightNumber, selectedFlightName, aniket);
-        System.out.println();
-        System.out.println("Are seats available?");
-        jetAirways.checkSeatAvailability();
-        System.out.println();
-        System.out.println(":::Flight details:::");
-        System.out.println(jetAirways.getFlightDetails());
+//        System.out.println();
+//        System.out.println("Are seats available?");
+//        jetAirways.checkSeatAvailability();
+//        System.out.println();
+//        System.out.println(":::Flight details:::");
+//        System.out.println(jetAirways.getFlightDetails());
 
         // Aniket is now booking regular ticket
         String departureLocation = "Nagpur";
@@ -55,7 +55,7 @@ public class Main {
 //        System.out.println();
 //        System.out.println(regularTicket.checkFlightDuration());
 //        System.out.println();
-//        regularTicket.bookTicket();
+        regularTicket.bookTicket();
 //        System.out.println();
 //        System.out.println("::Booking Details::");
 //        System.out.println(jetAirways.getFlightDetails());
@@ -76,30 +76,23 @@ public class Main {
 
         // Now he books TouristTicket
         TouristTicket touristTicket = new TouristTicket(aniket, jetAirways, departureLocation, departureDestination, departureDate,departureTime, destinationArrivalTime, seatNumber,ticketPrice,hotelAddr,selectedLocations);
-        System.out.println();
+//        System.out.println();
         touristTicket.bookTicket();
-        System.out.println();
-        System.out.println(jetAirways.getFlightDetails());
+//        System.out.println();
+//        System.out.println(jetAirways.getFlightDetails());
 
+        getTicketDetails(regularTicket);
+        getTicketDetails(touristTicket);
+    }
 
+    public static void getTicketDetails(Ticket ticket){
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        System.out.println("PNR Number: "+ ticket.getPnrNumber());
     }
 }
+/**OUTPUT:
+ * Ticket has been booked!
+ * Ticket has been booked!
+ * PNR Number: HKI224495
+ * PNR Number: CXZ429165
+ * **/
