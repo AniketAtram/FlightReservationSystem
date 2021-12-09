@@ -1,6 +1,5 @@
 public class Passenger {
 
-
     // TODO : Attributes of Passenger class
 
     private static int idCounter = 1; // a counter attribute to keep track of instances created
@@ -19,6 +18,7 @@ public class Passenger {
      * @param state: The state to which the passenger belongs
      * @param street : The address of the passenger
      **/
+
 
     public Passenger(String name, String number, String email, String city, String state, String street) {
         this.id = idCounter; // Assign the idCounter value to the Passenger instance attribute id
@@ -90,13 +90,16 @@ public class Passenger {
     /**These methods print the contact and address details of the passenger**/
 
     public void fetchContactDetails(){
+
         System.out.println("Name of Passenger: "+contact.contactName+"\nEmail address: "+contact.contactEmail+"\nPhone number: "+contact.contactPhoneNumber);
 
     } // End of fetchContactDetails
 
 
     public void fetchAddressDetails(){
+
         System.out.println("Address Details: \n"+address.addressStreet+"\n"+address.addressCity+"\n"+address.addressState);
+
     } // End of fetchAddressDetails
 
 

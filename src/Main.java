@@ -1,63 +1,78 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Main {
 
 
     public static void main(String[] args) {
 
-        String name = "Jigar Jani";
+        // Aniket has entered his details as requested
+        String name = "Aniket Atram";
         String phoneNumber = "9876543210";
-        String emailAddress = "jigarjani@eail.com";
-        String city = "Ahmadabad";
-        String state = "Gujrat";
-        String street = "Gandhi Nagar Chowk";
-        String[] servicesByJigar = new String[]{"food", "breakfast"};
-        String[] updatedServicesByJigar = new String[]{"Food", "Breakfast", "Brunch"};
+        String emailAddress = "aniket@email.com";
+        String city = "Nagpur";
+        String state = "Maharashtra";
+        String street = "KP-Sector 14";
 
-        Passenger jigar = new Passenger(name,phoneNumber,emailAddress,
+
+
+        Passenger aniket = new Passenger(name,phoneNumber,emailAddress,
                 city,state,street);
-        jigar.fetchContactDetails();
-        jigar.fetchAddressDetails();
+        System.out.println();
+        aniket.fetchContactDetails();
+        System.out.println();
+        aniket.fetchAddressDetails();
 
 
+        // Aniket is now checking and selecting flight
         String selectedFlightNumber = "NH6756";
         String selectedFlightName = "Jet Airways";
 
-        Flight jigarFlight = new Flight(selectedFlightNumber, selectedFlightName, jigar);
-        System.out.println(jigarFlight.getFlightDetails());
+        Flight jetAirways = new Flight(selectedFlightNumber, selectedFlightName, aniket);
+        System.out.println();
+        System.out.println("Are seats available?");
+        jetAirways.checkSeatAvailability();
+        System.out.println();
+        System.out.println(":::Flight details:::");
+        System.out.println(jetAirways.getFlightDetails());
 
-
-        int pnr = 123456789;
-        String departureLocation = "Gujrat";
-        String destinationLocation = "Goa";
-        String departureDate = "31/12/2021";
-        String departureTime = "11:30 AM";
-        String destinationArrivalTime = "13:15 PM";
+        // Aniket is now booking regular ticket
+        String departureLocation = "Nagpur";
+        String departureDestination = "Goa";
+        String departureDate = "31-12-2021";
+        String departureTime = "10:45 AM";
+        String destinationArrivalTime = "13:30 PM";
         int seatNumber = 12;
-        float ticketPrice = 1398.97F;
+        float ticketPrice = 1500.00F;
+        ArrayList<String> servicesByAniket = new ArrayList<>();
+        servicesByAniket.add("Breakfast");
+        servicesByAniket.add("Lunch");
 
-        RegularTicket jigarTicket = new RegularTicket(pnr, departureLocation,destinationLocation,departureDate,
-                departureTime, destinationArrivalTime, seatNumber, ticketPrice, jigar, jigarFlight, servicesByJigar);
+        RegularTicket regularTicket = new RegularTicket(aniket, jetAirways, departureLocation, departureDestination, departureDate,departureTime, destinationArrivalTime, seatNumber,ticketPrice,servicesByAniket);
+        System.out.println();
+        System.out.println("Services availed are:");
+        regularTicket.getServicesAvailed();
+        System.out.println();
+        System.out.println(regularTicket.checkFlightDuration());
+        System.out.println();
+        regularTicket.bookTicket();
+        System.out.println();
+        System.out.println("::Booking Details::");
+        System.out.println(jetAirways.getFlightDetails());
+        System.out.println();
+        System.out.println(regularTicket.getBookingStatus());
+        System.out.println(regularTicket.getPnrNumber());
 
-        System.out.println(jigarTicket.checkFlightDuration());
-        jigarTicket.checkServicesAvailed();
-        jigarTicket.updateServices(updatedServicesByJigar);
-        jigarTicket.checkServicesAvailed();
-        System.out.println(jigarTicket.checkFlightDuration());
-
-        String hotelAddr = "24 jump street";
-        ArrayList <String> locations = new ArrayList<String>();
-        locations.add("Vagatore");
-        locations.add("Panaji");
-        locations.add("Anjuna Beach");
 
 
-        TouristTicket jigarTouristTicket = new TouristTicket(pnr, departureLocation,destinationLocation,departureDate,
-                departureTime, destinationArrivalTime, seatNumber, ticketPrice, jigar, jigarFlight,hotelAddr, locations);
 
-        jigarTouristTicket.removeLocation("Anjuna beach");
 
-        System.out.println(jigarTouristTicket.getSelectedLocations());
+
+
+
+
+
+
 
 
 

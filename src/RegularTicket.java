@@ -1,20 +1,22 @@
+import java.util.ArrayList;
+// This class is subclass of base class Ticket
 public class RegularTicket extends Ticket{
 
 
     // TODO : Add attributes
-    private String[] servicesRequested; // Services such as food , water, etc. availed by passenger
+    private ArrayList<String> servicesRequested; // Services such as food , water, etc. availed by passenger
 
 
     // TODO : Add constructor
 
-    public RegularTicket(int pnrNumber, String departureLocation, String destinationLocation, String departureDate,
+    public RegularTicket(Passenger passengerDetails, Flight flightDetails, String departureLocation, String destinationLocation, String departureDate,
                          String departureTime, String destinationArrivalTime,int seatNumber, float ticketPrice,
-                         Passenger passengerDetails, Flight flightDetails, String[] servicesRequested){
+                         ArrayList<String> servicesRequested){
 
 
         // Calling the constructor from Ticket class
-        super(pnrNumber, departureLocation,destinationLocation,departureDate, departureTime, destinationArrivalTime,seatNumber,
-                ticketPrice, passengerDetails, flightDetails);
+        super(passengerDetails, flightDetails, departureLocation,destinationLocation,departureDate, departureTime, destinationArrivalTime,seatNumber,
+                ticketPrice);
 
 
         this.servicesRequested = servicesRequested; // initializing the servicesRequested attribute
@@ -25,19 +27,15 @@ public class RegularTicket extends Ticket{
 
     // TODO : Add methods
 
-    public void checkServicesAvailed(){
-        System.out.println("Services Availed are:");
-        for(int i=0;i<servicesRequested.length;i++){
-            System.out.println("["+(i+1)+"] "+servicesRequested[i]);
-        }
-    }
+    // Adds services as per passenger's request
+    public void addNewServices(ArrayList<String> newServices){
+        this.servicesRequested.addAll(newServices);
+        System.out.println(this.servicesRequested);
+    }//End of addNewServices method
 
 
-    public void updateServices(String[] servicesRequested){
-        this.servicesRequested = servicesRequested;
-    }
-
-    // TODO : Add getters and setters
-
-
+    // returns the services requested by the passenger
+    public void getServicesAvailed(){
+        System.out.println(this.servicesRequested);
+    }// End of getServicesAvailed method
 }

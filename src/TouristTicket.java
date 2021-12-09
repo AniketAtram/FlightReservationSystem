@@ -1,6 +1,6 @@
 import java.lang.reflect.Array;
 import java.util.*;
-
+// This class is subclass of base class Ticket
 public class TouristTicket extends Ticket{
 
     // TODO: Add attributes
@@ -9,15 +9,14 @@ public class TouristTicket extends Ticket{
 
 
     // TODO : Add a constructor
-   public TouristTicket(int pnrNumber, String departureLocation, String destinationLocation,
+   public TouristTicket(Passenger passengerDetails, Flight flightDetails, String departureLocation, String destinationLocation,
                         String departureDate, String departureTime, String destinationArrivalTime,int seatNumber, float ticketPrice,
-                        Passenger passengerDetails, Flight flightDetails, String hotelAddress,
-                        ArrayList<String> selectedLocations){
+                        String hotelAddress, ArrayList<String> selectedLocations){
 
 
        // Calling constructor from Ticket class
-       super(pnrNumber, departureLocation, destinationLocation, departureDate, departureTime, destinationArrivalTime,seatNumber,
-               ticketPrice, passengerDetails, flightDetails);
+       super(passengerDetails, flightDetails, departureLocation, destinationLocation, departureDate, departureTime,
+               destinationArrivalTime,seatNumber, ticketPrice);
 
 
        this.hotelAddress = hotelAddress; // Initializing the hotel address
@@ -30,8 +29,22 @@ public class TouristTicket extends Ticket{
     // TODO : Add methods
     // Remove location from array
     public void removeLocation(String locationToBeRemoved){
-        selectedLocations.remove(locationToBeRemoved);
+       this.selectedLocations.remove(new String(locationToBeRemoved));
 
+        System.out.println(this.selectedLocations);
+    }// End of removeLocation method
+
+
+    // Add new location in array
+    public void addNewLocation(String locationToBeAdded){
+       if (this.selectedLocations.size() >=5){
+           System.out.println("Sorry! cannot add more than 5 locations");
+       }
+       else{
+           this.selectedLocations.add(locationToBeAdded);
+           System.out.println("Location added successfully!");
+           System.out.println(this.selectedLocations);
+       }
     }
 
 
