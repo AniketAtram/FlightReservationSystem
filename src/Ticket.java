@@ -86,7 +86,7 @@ public abstract class Ticket {
      * If the passenger does not book a ticket then PNR number will be null**/
     public void bookTicket(){
 
-        if(this.flightDetails.isAvailable()){
+        if (this.flightDetails.isAvailable()){
             this.bookingStatus = "Confirmed"; // Set the booking status to book
             // Randomly assign a PNR to the passenger
             // NOTE : SOMETIMES IT WILL ASSIGN SAME PNR TO PASSENGER DUE TO RANDOM NATURE
